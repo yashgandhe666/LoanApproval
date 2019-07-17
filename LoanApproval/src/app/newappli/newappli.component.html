@@ -1,0 +1,111 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form [formGroup]="profileForm" (ngsubmit)="onSubmit()">
+            <div formGroupName="personal">    
+                <label> First Name:</label>
+                <input type="text" formControlName="firstName" maxlength="255" required>
+                
+                <label>Middle Name:</label>
+                <input type="text" formControlName="middleName" maxlength="255"> 
+                
+                <label>Last Name: </label>
+                <input type="text" formControlName="lastName" maxlength="255" required> 
+                
+                    <!-- Birthday -->
+                <label>Maritial Status: </label>
+                <select formControlName="maritial" required>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+                 
+            </div>
+
+            <div formGroupName="address">
+                <label>Line1:</label> 
+                <input type="text" formControlName="line1" maxlength="255" required>
+                
+                <label>Line2: </label>
+                <input type="text" formControlName="line2" maxlength="255"> 
+                
+                <label>City: </label>
+                <input type="text" formControlName="city" maxlength="255" required>
+                
+                <label>State: </label>
+                <input type="text" formControlName="state" maxlength="255" required> 
+                
+                <label>PostalCode:</label>
+                <input type="number" pattern="[0-9]{5}" formControlName="zip"> 
+
+            </div>
+            <label>Social Security Number: </label>
+            <input type="text" formControlName="ssn" required>  
+            
+            <div formGroupName="phNum">Applicant Phone Number:
+                <label>Home: </label>
+                <input type="number" formControlName="phHome" pattern="[0-9]{10}" required> 
+                
+                <label>Office:</label> 
+                <input type="number" formControlName="phOff" pattern="[0-9]{10}"> 
+                
+                <label>Mobile:</label> 
+                <input type="number" formControlName="phMob" pattern="[0-9]{10}" required> 
+                
+            </div>
+            <label>Applicant Email:</label> 
+            <input type="email" formControlName="email" required> 
+            
+            <label>Loan Amount: </label>
+            <input type="number" formControlName="loanamt" required> 
+            
+            <label>Loan Purpose: </label>
+            <select formControlName="loanprp" required>
+                <option value="Debt">Debt</option>
+                <option value="Educational Loan">Educational Loan</option>
+                <option value="Personal Loan">Personal Loan</option>
+                <option value="Home Loan">Home Loan</option>
+            </select>
+            
+            <label>Description:</label> 
+            <input type="text" formControlName="desc"> 
+            
+            <div formGroupName="empl">Employer Details:
+                <label>Work Experience </label>
+                <input type="number" formControlName="workexp"> 
+                <label>Annual Salary: </label>
+                <input type="number" formControlName="annual" required> 
+                <label>Current Employer Name: </label>
+                <input type="text" formControlName="empName" required> 
+
+                <label>Current Employer Address:</label>
+                <div formGroupName="empAddr">
+                    <label>Line1:</label>
+                    <input type="text" formControlName="empline1" maxlength="255" required> 
+                    <label>Line2: </label>
+                    <input type="text" formControlName="empline2" maxlength="255"> 
+                    <label>City: </label>
+                    <input type="text" formControlName="empcity" maxlength="255" required> 
+                    <label>State: </label>
+                    <input type="text" formControlName="empstate" maxlength="255" required> 
+                    <label>Pin Code: </label>
+                    <input type="number" formControlName="empzip" pattern="[0-9]{5}" required> 
+                </div>
+                
+            </div>
+            <label>Designation: </label>
+            <input type="text" formControlName="desig" maxlength="255">
+
+           <button type="submit" (click)="onSubmit()">Submit</button>  
+        </form>
+        
+        <p>
+                Form Status: {{ profileForm.status }}
+        </p>
+        
+    </body>
+</html>
