@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WelcomeDataService } from '../service/data/welcome-data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:WelcomeDataService) { }
+  getWelcomeMessage() {
+    // console.log(this.service.executeHelloWorldBeanService());
+    this.service.executeHelloWorldBeanService().subscribe(
+      response => this.handleSuccessfulResponse(response),
+    );
+    console.log('last line of get well');
+    // console.log("Welcome message");
+  }
+
+  handleSuccessfulResponse(response) {
+    console.log(response);
+    console.log(response.message);
+  }
+ 
 
   ngOnInit() {
   }
