@@ -1,0 +1,28 @@
+div{
+font-family: "Times New Roman", Times, serif;
+
+    padding:50px 25px 25px 25px;
+
+}
+table {
+    width:100%;
+    padding-top:100px;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+  table tr:nth-child(even) {
+    background-color: #eee;
+  }
+  table tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  table th {
+    background-color: black;
+    color: white;
+  }

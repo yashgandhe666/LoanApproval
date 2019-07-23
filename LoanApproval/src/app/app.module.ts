@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { NewappliComponent } from './newappli/newappli.component';
 import { HomeComponent } from './home/home.component';
+import { ViewappliComponent } from './viewappli/viewappli.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewappliComponent,
-    HomeComponent
+    HomeComponent,
+    ViewappliComponent
   ],
   imports: [
     BrowserModule,

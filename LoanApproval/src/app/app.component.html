@@ -1,2 +1,18 @@
-<app-home></app-home>
-<router-outlet></router-outlet>
+<div style="padding: 20px;">
+    <h1 style="color: rgb(10, 10, 46)">{{title}}</h1>
+    <h3>{{description}}</h3>
+    <!-- <nav>
+      
+      
+      <a routerLink="newappli" class="btn btn-primary active" role="button" routerLinkActive="active">Add New Application</a>
+      <a routerLink="viewappli" class="btn btn-primary active" role="button" routerLinkActive="active">View Existing Application</a>
+    </nav> -->
+    
+    <ul>
+        <li><a routerLink="newappli"  routerLinkActive="active">Add New Application</a></li>
+        <li><a routerLink="viewappli"  routerLinkActive="active">View Existing Application</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+        <li style="float:right"><a class="active" href="#contact">Contact</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
