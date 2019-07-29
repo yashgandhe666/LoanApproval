@@ -1,0 +1,42 @@
+<div>
+  <table>
+    <tr>
+      <th>SSN</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <div *ngIf="showMyContainer">
+          <th>Maritial Status</th>
+          <th>Score </th>
+          <th> City</th>
+            <th>Zip</th>
+              <th>Phone Number</th>
+                <th>Email</th>
+                  <th>Loan Amount</th>
+                    <th>Annual Income</th>
+                    </div>
+      <button (click)="showMyContainer=!showMyContainer">Show Details</button>
+      
+      <!-- <th>Score</th> -->
+    </tr>
+    <tr *ngFor="let person of persons | async" style="width: 300px;">
+      <th>{{person.ssn}}</th>
+      <th>{{person.firstName}}</th>
+      <th>{{person.lastName}}</th>
+      <!-- <th>{{person.score}}</th> -->
+      <div *ngIf="showMyContainer">
+          <th>{{person.maritial}}</th>
+          <th>{{person.score}}</th>
+          <th>{{person.city}}</th>
+            <th> {{person.zip}}</th>
+              <th> {{person.phHome}}</th>
+                <th> {{person.email}}</th>
+                  <th>{{person.loanamt}}</th>
+                    <th> {{person.annual}}</th>
+
+     </div>
+      
+    </tr>
+  </table>
+  
+</div>
+<router-outlet></router-outlet>
